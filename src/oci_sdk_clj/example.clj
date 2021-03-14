@@ -16,7 +16,7 @@
         endpoint "https://iaas.uk-london-1.oraclecloud.com/20160918/shapes/"]
     (oci/get provider endpoint
              {:query-params {:compartmentId compartment-ocid}
-                             :oci-debug true})))
+              :oci-debug true})))
 
 (defn bare-metal-shapes
   "Return a list of all available Bare Metal compute shapes"

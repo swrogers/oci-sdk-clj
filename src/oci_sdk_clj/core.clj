@@ -44,7 +44,6 @@
       (assoc req :body (json/generate-string body))
       req)))
 
-
 (defn- build-request
   "Construct an HTTP request for dispatching and signing"
   [method url req]
@@ -69,7 +68,6 @@
                        (for [[k v] m]
                          (str (name k) "="
                               (URLEncoder/encode (or v ""))))))
-
 
 (defn define-method-fn
   "Like #'request, but sets the :method and :url as appropriate."
@@ -121,60 +119,61 @@
                {:name "cloud-guard" :description "Cloud Guard" :endpoint "" :version ""}
                {:name "compute" :description "Compute Service" :endpoint "iaas" :version "20160918"}
                {:name "compute-management" :description "Compute Management Service" :endpoint "" :version ""}
-               {:name "data-catalog" :description "Data Catalog"}
-               {:name "data-flow" :description "Data Flow"}
-               {:name "data-integration" :description "Data Integration"}
-               {:name "data-safe" :description "Data Safe"}
-               {:name "data-science" :description "Data Science"}
-               {:name "database-management" :description "Database Management"}
-               {:name "db" :description "Database Service"}
-               {:name  "dns" :description "DNS"}
-               {:name "dts" :description "Data Transfer Service"}
-               {:name "email" :description "Email Delivery"}
-               {:name "events" :description "Events"}
-               {:name "fn" :description "Functions Service"}
-               {:name "fs" :description "File Storage"}
-               {:name "health-checks" :description "Health Checks"}
-               {:name "iam" :description "Identity and Access Management Service"}
-               {:name "instance-agent" :description "Compute Instance Agent Service"}
+               {:name "data-catalog" :description "Data Catalog" :endpoint "" :version ""}
+               {:name "data-flow" :description "Data Flow" :endpoint "" :version ""}
+               {:name "data-integration" :description "Data Integration" :endpoint "" :version ""}
+               {:name "data-safe" :description "Data Safe" :endpoint "" :version ""}
+               {:name "data-science" :description "Data Science" :endpoint "" :version ""}
+               {:name "database-management" :description "Database Management" :endpoint "" :version ""}
+               {:name "db" :description "Database Service" :endpoint "" :version ""}
+               {:name  "dns" :description "DNS" :endpoint "" :version ""}
+               {:name "dts" :description "Data Transfer Service" :endpoint "" :version ""}
+               {:name "email" :description "Email Delivery" :endpoint "" :version ""}
+               {:name "events" :description "Events" :endpoint "" :version ""}
+               {:name "fn" :description "Functions Service" :endpoint "" :version ""}
+               {:name "fs" :description "File Storage" :endpoint "" :version ""}
+               {:name "health-checks" :description "Health Checks" :endpoint "" :version ""}
+               {:name "iam" :description "Identity and Access Management Service" :endpoint "" :version ""}
+               {:name "instance-agent" :description "Compute Instance Agent Service" :endpoint "" :version ""}
                {:name "integration" :description "Oracle Integration"}
-               {:name "kms" :description "Key Management"}
-               {:name "lb" :description "Load Balancing"}
-               {:name "limits" :description "Service limits"}
-               {:name "log-analytics" :description "LogAnalytics"}
-               {:name "logging" :description "Logging Management"}
-               {:name "logging-ingestion" :description "Logging Ingestion"}
-               {:name "logging-search" :description "Logging Search"}
-               {:name "management-agent" :description "Management Agent"}])
-  ;; "management-dashboard   ManagementDashboard
-  ;; "marketplace            Marketplace Service
-  ;; "monitoring             Monitoring
-  ;; "mysql                  MySQL Database Service
-  ;; "network                Networking Service
-  ;; "nosql                  NoSQL Database
-  ;; "oce                    Oracle Content and Experience
-  ;; "ocvs                   Oracle Cloud VMware Solution
-  ;; "oda                    Digital Assistant Service Instance
-  ;; "ons                    Notifications
-  ;; "opsi                   Operations Insights
-  ;; "optimizer              Cloud Advisor
-  ;; "organizations          TenantManager
-  ;; "os                     Object Storage Service
-  ;; "os-management          OS Management
-  ;; "raw-request            Makes a raw request against an OCI service
-  ;; "resource-manager       Resource Manager
-  ;; "rover                  RoverCloudService
-  ;; "sch                    Service Connector Hub
-  ;; "search                 Search Service
-  ;; "secrets                Secrets
-  ;; "session                Session commands for CLI
-  ;; "setup                  Setup commands for CLI
-  ;; "streaming              Streaming Service
-  ;; "support                Support Management
-  ;; "usage-api"              "Usage"
-  ;; "vault" "Secrets Management"
-  ;; "waas" "Web Application Acceleration and Security Services"
-;; "work-requests" "Work Requests"
+               {:name "kms" :description "Key Management" :endpoint "" :version ""}
+               {:name "lb" :description "Load Balancing" :endpoint "" :version ""}
+               {:name "limits" :description "Service limits" :endpoint "" :version ""}
+               {:name "log-analytics" :description "LogAnalytics" :endpoint "" :version ""}
+               {:name "logging" :description "Logging Management" :endpoint "" :version ""}
+               {:name "logging-ingestion" :description "Logging Ingestion" :endpoint "" :version ""}
+               {:name "logging-search" :description "Logging Search" :endpoint "" :version ""}
+               {:name "management-agent" :description "Management Agent" :endpoint "" :version ""}
+
+               {:name "management-dashboard" :description "ManagementDashboard" :endpoint "" :version ""}
+               {:name "marketplace" :description "Marketplace Service" :endpoint "" :version ""}
+               {:name "monitoring" :description "Monitoring" :endpoint "" :version ""}
+               {:name "mysql" :description "MySQL Database Service" :endpoint "" :version ""}
+               {:name "network" :description "Networking Service" :endpoint "" :version ""}
+               {:name "nosql" :description "NoSQL Database" :endpoint "" :version ""}
+               {:name "oce" :description "Oracle Content and Experience" :endpoint "" :version ""}
+               {:name "ocvs" :description "Oracle Cloud VMware Solution" :endpoint "" :version ""}
+               {:name "oda" :description "Digital Assistant Service Instance" :endpoint "" :version ""}
+               {:name "ons" :description "Notifications" :endpoint "" :version ""}
+               {:name "opsi" :description "Operations Insights" :endpoint "" :version ""}
+               {:name "optimizer" :description "Cloud Advisor" :endpoint "" :version ""}
+               {:name "organizations" :description "TenantManager" :endpoint "" :version ""}
+               {:name "os" :description "Object Storage Service" :endpoint "" :version ""}
+               {:name "os-management" :description "OS Management" :endpoint "" :version ""}
+               {:name "raw-request" :description "Makes a raw request against an OCI service" :endpoint "" :version ""}
+               {:name "resource-manager" :description "Resource Manager" :endpoint "" :version ""}
+               {:name "rover" :description "RoverCloudService" :endpoint "" :version ""}
+               {:name "sch" :description "Service Connector Hub" :endpoint "" :version ""}
+               {:name "search" :description "Search Service" :endpoint "" :version ""}
+               {:name "secrets" :description "Secrets" :endpoint "" :version ""}
+               {:name "session" :description "Session commands for CLI" :endpoint "" :version ""}
+               {:name "setup" :description "Setup commands for CLI" :endpoint "" :version ""}
+               {:name "streaming" :description "Streaming Service" :endpoint "" :version ""}
+               {:name "support" :description "Support Management" :endpoint "" :version ""}
+               {:name "usage-api" :description "Usage" :endpoint "" :version ""}
+               {:name "vault" :description "Secrets Management" :endpoint "" :version ""}
+               {:name "waas" :description "Web Application Acceleration and Security Services" :endpoint "" :version ""}
+               {:name "work-requests" :description "Work Requests" :endpoint "" :version ""}])
 
 (defn find-map [ms k v]
   (into {}
