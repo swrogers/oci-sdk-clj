@@ -144,7 +144,6 @@
                {:name "logging-ingestion" :description "Logging Ingestion" :endpoint "" :version ""}
                {:name "logging-search" :description "Logging Search" :endpoint "" :version ""}
                {:name "management-agent" :description "Management Agent" :endpoint "" :version ""}
-
                {:name "management-dashboard" :description "ManagementDashboard" :endpoint "" :version ""}
                {:name "marketplace" :description "Marketplace Service" :endpoint "" :version ""}
                {:name "monitoring" :description "Monitoring" :endpoint "" :version ""}
