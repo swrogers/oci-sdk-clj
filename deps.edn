@@ -1,0 +1,6 @@
+{:deps {org.clojure/clojure {:mvn/version "1.10.0"}
+        com.oracle.oci.sdk/oci-java-sdk-common {:mvn/version "1.32.1"
+                                                :exclusions [net.minidev/json-smart]}
+        org.slf4j/slf4j-simple {:mvn/version "1.7.30"}
+        cheshire/cheshire {:mvn/version "5.10.0"}
+        clj-http/clj-http {:mvn/version "3.12.0"}}}
