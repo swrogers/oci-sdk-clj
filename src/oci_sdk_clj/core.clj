@@ -44,6 +44,15 @@
       (assoc req :body (json/generate-string body))
       req)))
 
+(defn- params->query-string
+  "Converts a map of query parameter options into a URL encoded query string that
+   can be added to a URI"
+  [m]
+  (clojure.string/join "&"
+                       (for [[k v] m]
+                         (str (name k) "="
+                              (URLEncoder/encode (or v ""))))))
+
 (defn- build-request
   "Construct an HTTP request for dispatching and signing"
   [method url req]
@@ -59,15 +68,6 @@
             :headers {"content-type" ["application/json"]}
             :throw-exceptions false}
            (dissoc req' :query-params))))
-
-(defn- params->query-string
-  "Converts a map of query parameter options into a URL encoded query string that
-   can be added to a URI"
-  [m]
-  (clojure.string/join "&"
-                       (for [[k v] m]
-                         (str (name k) "="
-                              (URLEncoder/encode (or v ""))))))
 
 (defn define-method-fn
   "Like #'request, but sets the :method and :url as appropriate."
